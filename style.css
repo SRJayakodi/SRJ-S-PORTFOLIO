@@ -1,0 +1,418 @@
+/* change the highlight color and text color when a user selects text */
+*::selection {
+    background-color: #321E48;
+    color: #AACCD6;
+}
+
+.intro {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(132deg, #321E48, #43637E, #65DCD5, #D9FFF4, #67A2C5);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: BackgroundGradient 15s ease infinite;
+}
+
+/* Into background color animation */
+@keyframes BackgroundGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.intro-block {
+    display: flex;
+    flex: 1;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 550px;
+}
+
+.intro-title {
+    color: #112E81;
+    font-family: 'NTR', serif;
+    font-size: 88px;
+}
+
+.intro-name {
+    color: #AACCD6;
+    font-weight: 700;
+    font-family: NTR, sans-serif;
+}
+
+.intro-cursor {
+    color: #AACCD6;
+    margin-left: 4px;
+    font-weight: 300;
+    animation: blink 0.8s infinite;
+    display: inline-block;
+}
+
+/* Cursor blinking animation */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.intro {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+.intro-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+}
+
+.intro-desc {
+    font-family: NTR, sans-serif;
+    font-size: 20px;
+    color: #4647AE;
+}
+
+.intro-image {
+    display: flex;
+    flex: 0;
+    justify-content: center;
+}
+
+.in-img {
+    height: auto;
+    width: auto;
+    align-items: left;
+    margin: 0;
+    border-radius: 20%;
+}
+
+.about {
+    max-width: 1100px;
+    padding: 50px 20px;
+    margin: 0 auto;
+}
+
+.about-header {
+    display: flex;
+    flex-direction: row;
+    max-width: 1100px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: NTR, sans-serif;
+    color: #112E81;
+    font-size: 50px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Animated Line Expansion */
+.title-line {
+    height: 2px;
+    background: linear-gradient(90deg, #0284c7 0%, rgba(2, 132, 199, 0.1) 100%);
+    flex-grow: 1;
+    transform-origin: left;
+    animation: expandLine auto linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+@keyframes expandLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.about-desc {
+    font-family: NTR, sans-serif;
+    font-size: 20px;
+    color: #4647AE;
+}
+
+.highlight-word {
+    color: #AACCD6;
+    font-weight: 700;
+    font-family: NTR, sans-serif;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-desc {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    gap: 10px;
+    line-height: 1.6;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.skills-list li {
+    color: #4382DF;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.skills-list .bullet {
+    color: #64ffda;
+    margin-right: 8px;
+}
+
+/* hover animation when cursor on the skill cards list */
+.skill-card:hover {
+    transform: translateX(6px) translateY(-2px);
+    background: #ffffff;
+    border-color: #38bdf8;
+    box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.15);
+    color: #0284c7;
+}
+
+.about-image {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.abt-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Float the Svg animatedly */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+        /* Moves up smoothly */
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* pop up paragraphs and thing animatedly */
+.pop-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.pop-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects {
+    max-width: 1100px;
+    padding: 30px 20px;
+    margin: 0 auto;
+}
+
+.project-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1100px;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.project-name {
+    font-family: NTR, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #98E8DE;
+}
+
+.project-desc {
+    color: #FFF9D2;
+    font-size: 20px;
+}
+
+
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Ensures the video fills its parent container nicely */
+}
+
+.carousel-inner {
+    border-radius: 5%;
+    object-fit: contain;
+}
+
+.web-icon {
+    color: #112E81;
+    font-weight: 700;
+}
+
+
+/* CONTACT ME SECTION */
+.contact {
+    max-width: 1100px;
+    padding: 50px 20px;
+    margin: 0 auto;
+}
+
+.contact-con {
+    display: flex;
+    flex-direction: row;
+    max-width: 1100px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(6.8px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    
+}
+
+.contact-title {
+    font-family: NTR, sans-serif;
+    color: #112E81;
+    font-size: 50px;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 20px;
+}
+/* Initial state (hidden before scrolling into view) */
+.vertical-divider {
+  width: 4px;                  /* Line thickness */
+  height: 110px;               /* Line height */
+  background-color: #172554;   /* Line color */
+  border-radius: 4px;
+  transform-origin: top;
+  /* Hidden state */
+  transform: scaleY(0);
+  opacity: 0;
+}
+/* Class added on scroll */
+.vertical-divider.animate {
+  animation: growDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Animation Keyframes */
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.connect-line {
+  display: flex;
+  align-items: center; /* Vertically aligns icon with text */
+  gap: 8px;            /* Adds consistent spacing */
+  margin-top: 12px;
+}
+
+.social-icon {
+  width: 20px;         /* Set your desired icon size */
+  height: 20px;
+  margin-left: 10px;
+}
+
+/* Button Base Styling */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  /* Color Theme matching the screenshot */
+  color: #112E81;                  /* Mint/Cyan text */
+  background-color: transparent;    /* Dark container background shows through */
+  border: 1.5px solid #112E81;     /* Matching mint/cyan border */
+  border-radius: 10px;             /* Rounded corners */
+  /* Typography */
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  /* Smooth Hover Animation */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+/* Icon Sizing & Color */
+.btn-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor; /* Inherits #4eecd5 from parent text color */
+}
+/* Hover Effects */
+.contact-btn:hover {
+  background-color: rgba(78, 236, 213, 0.1); /* Subtle glowing background fill */
+  box-shadow: 0 0 15px rgba(78, 236, 213, 0.25); /* Cyan outer glow */
+  transform: translateY(-2px);                  /* Slight lift effect */
+}
+/* Active Click Effect */
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+/* FOOTER SECTION */
+.footer {
+    background: linear-gradient(132deg, #321E48, #43637E, #65DCD5, #D9FFF4, #67A2C5);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: BackgroundGradient 15s ease infinite;
+}
